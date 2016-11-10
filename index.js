@@ -1,16 +1,15 @@
 const Queue = require('firebase-queue')
 const admin = require('firebase-admin')
+const dotenv = require('dotenv')
 const gcloud = require('google-cloud')
 const lame = require('lame')
 const progressStream = require('progress-stream')
 const shortid = require('shortid')
 const wav = require('wav')
 
-const env = process.env.NODE_ENV || 'development'
+dotenv.config()
 
-if (env === 'development') {
-  require('dotenv').config()
-}
+const env = process.env.NODE_ENV || 'development'
 
 const projectId = 'multi-track-listening'
 const privateKey = process.env.FIREBASE_PRIVATE_KEY
