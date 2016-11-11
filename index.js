@@ -78,7 +78,7 @@ const queue = new Queue(queueRef, options, (data, progress, resolve, reject) => 
                     song1Name,
                     song2Name
                   })
-                    .then(() => mixesAliasRef.set({ [uid]: serverId })
+                    .then(() => mixesAliasRef.child(uid).set(serverId)
                       .then(() => resolve())
                     )
                 })
